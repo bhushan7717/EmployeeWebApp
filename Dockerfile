@@ -5,9 +5,9 @@ COPY . .
 RUN npm install
 COPY . /apps
 ARG configuration=production
-RUN npm run build --output-path=./dist/out --production
+RUN npm run build --configuration=production
 # Stage 2, use the compiled app, ready for production with Nginx
 FROM nginx:alpine
 COPY /nginx-custom.conf /etc/nginx/conf.d/
 RUN rm -rf /usr/share/nginx/html/*
-COPY --from=build /apps/dist/out/ /usr/share/nginx/html
+COPY --from=build /apps/dist/employee-web-app /usr/share/nginx/html

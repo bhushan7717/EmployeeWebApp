@@ -1,0 +1,22 @@
+
+
+<h4>Weather Info</h4>
+
+<table class="table table-striped" style="width:60%;text-align: center;margin-left: auto; margin-right: auto;">
+    <thead>
+    <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Temprature in Celsius</th>
+        <th scope="col">Temprature in Farenite</th>
+        <th scope="col">Summary</th>
+    </tr>
+</thead>
+<tbody>
+    <tr  *ngFor="let e of ws">
+        <td>{{e.date | date : 'shortDate' }}</td>
+        <td>{{e.temperatureC}}</td>
+        <td>{{e.temperatureF}}</td>
+        <td>{{e.summery}}</td>
+    </tr>
+</tbody>
+</table>
