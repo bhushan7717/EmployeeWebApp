@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { DemoService } from './demo.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'EmployeeWebApp';
+  constructor(private sharedService : DemoService){
+    // this.sharedService.getData().subscribe((data) => {
+    //     console.log(data);
+    //});
+  }
 }

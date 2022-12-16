@@ -1,0 +1,22 @@
+
+
+<h3>Empoyee List</h3>
+
+<table class="table table-striped" style="width:60%;text-align: center;margin-left: auto; margin-right: auto;">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col"></th>
+    </tr>
+</thead>
+<tbody>
+    <tr  *ngFor="let e of EmpList">
+        <td>{{e.empId}}</td>
+        <td>{{e.firstName}}</td>
+        <td>{{e.lastName}}</td>
+        <td><span class="fas fa-edit"></span></td>
+    </tr>
+</tbody>
+</table>
