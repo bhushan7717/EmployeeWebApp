@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { EmployeeService } from 'src/_services/employee.service';
 import { Employee } from 'src/_Models/employee';
-import faCoffee  from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'app-employee-list',
@@ -9,7 +8,6 @@ import faCoffee  from '@fortawesome/angular-fontawesome';
   styleUrls: ['./employee-list.component.css']
 })
 export class EmployeeListComponent {
-  public facoffee = facoffee;
   public EmpList : Employee[] | any;
 
   constructor(private emp : EmployeeService){
