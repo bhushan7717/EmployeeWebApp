@@ -2,7 +2,8 @@
 
 <h4>Weather Info</h4>
 
-<table class="table table-striped" style="width:60%;text-align: center;margin-left: auto; margin-right: auto;">
+<ng-template #elseBlock>{{errorMsg}}</ng-template>
+<table *ngIf="ws; else elseBlock" class="table table-striped" style="width:60%;text-align: center;margin-left: auto; margin-right: auto;">
     <thead>
     <tr>
         <th scope="col">Date</th>
@@ -12,7 +13,7 @@
     </tr>
 </thead>
 <tbody>
-    <tr  *ngFor="let e of ws">
+    <tr *ngFor="let e of ws">
         <td>{{e.date | date : 'shortDate' }}</td>
         <td>{{e.temperatureC}}</td>
         <td>{{e.temperatureF}}</td>

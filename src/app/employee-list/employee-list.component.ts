@@ -10,10 +10,17 @@ import { Employee } from 'src/_Models/employee';
 export class EmployeeListComponent {
   public EmpList : Employee[] | any;
 
+  ngOnInit(){
+
+    console.log('Inside NgOnInit');
+
+    this.emp.getData().subscribe((data) => {
+      this.EmpList = data;
+      console.log(data);
+  });
+  }
+
   constructor(private emp : EmployeeService){
-        this.emp.getData().subscribe((data) => {
-            this.EmpList = data;
-            console.log(data);
-        }); 
+    console.log('Inside Constuctor');
   }
 }

@@ -10,12 +10,14 @@ import { WeatherService } from 'src/_services/weather.service';
 export class WeatherForecastComponent {
   
   public ws : WeatherForecast[] | any;
-
+  errorMsg : string = "";
 
   constructor(private weatherService : WeatherService){
         this.weatherService.getWeatherInfo().subscribe((data) => {
           this.ws = data;
           console.log(this.ws);
+        }, error => {
+          this.errorMsg = error;
         });
   }
 
