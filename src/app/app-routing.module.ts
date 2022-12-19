@@ -7,7 +7,9 @@ import { WeatherForecastComponent } from './weather-forecast/weather-forecast.co
 const routes: Routes = [
   { path : 'employeeList', component : EmployeeListComponent },
   { path : 'weatherforecast', component : WeatherForecastComponent },
-  { path : '', component : AppComponent }
+  { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
+  { path: 'orders', loadChildren: () => import('./orders/orders.module').then(m => m.OrdersModule) },
+  { path : '', redirectTo : '', pathMatch : 'full' }
 ];
 
 @NgModule({
